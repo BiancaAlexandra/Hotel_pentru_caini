@@ -1,0 +1,285 @@
+%Hotel pentru caini
+%catei 10
+
+%Aldo
+%Bella
+%Bruno
+%Cosmo
+%Dante
+%Ela
+%Falco
+%Goofy
+%Haiduc
+%Helga
+
+%4 custi
+
+%FAPTE
+masculin(aldo).
+masculin(bruno).
+masculin(cosmo).
+masculin(falco).
+masculin(goofy).
+masculin(haiduc).
+
+feminin(bella).
+feminin(ela).
+feminin(helga).
+feminin(lolly).
+
+caine(aldo, talieMica, energic).
+caine(bruno, talieMica, linistit).
+caine(cosmo, talieMica, linistit).
+caine(falco, talieMare, energic).
+caine(goofy, talieMare, energic).
+caine(haiduc, talieMare, linistit).
+caine(bella, talieMica, linistit).
+caine(ela, talieMare, linistit).
+caine(helga, talieMare, linistit).
+caine(lolly, talieMica, energic).
+
+%stapani(unul sau mai multi caini)
+stapan(bianca, aldo).
+stapan(maria, bruno).
+stapan(alexandra, cosmo).
+stapan(steluta, falco).
+stapan(steluta, goofy).
+stapan(maria, haiduc).
+stapan(ion, bella).
+stapan(sorin, ela).
+stapan(violeta, helga).
+stapan(maria, lolly).
+
+%cusca nr.1 
+cusca(aldo, 1).
+cusca(bruno, 1).
+cusca(cosmo, 1).
+
+%cusca nr.2
+cusca(falco, 2).
+cusca(goofy, 2).
+cusca(haiduc, 2).
+
+%cusca nr.3
+cusca(bella, 3).
+cusca(ela, 3).
+cusca(helga, 3).
+
+%cusca nr.4
+cusca(lolly, 4).
+
+cusca1_locuri(4).
+cusca2_locuri(4).
+cusca3_locuri(3).
+cusca4_locuri(3).
+
+varsta_ani(aldo, 1).
+varsta_ani(bruno, 2).
+varsta_ani(cosmo, 5).
+varsta_ani(falco, 7).
+varsta_ani(goofy, 1).
+varsta_ani(haiduc, 10).
+varsta_ani(bella, 12).
+varsta_ani(ela, 2).
+varsta_ani(helga, 8).
+varsta_ani(lolly, 11).
+
+nr_animale(cusca1, 4).
+nr_animale(cusca2, 4).
+nr_animale(cusca3, 3).
+nr_animale(cusca4, 3).
+
+%medicamente(vitamine - cei sanatosi, antibiotice - cei bolnavi)
+stare_de_sanatate(aldo, sanatos).
+stare_de_sanatate(bruno, bolnav).
+stare_de_sanatate(cosmo, bolnav).
+stare_de_sanatate(falco, sanatos).
+stare_de_sanatate(goofy, sanatos).
+stare_de_sanatate(haiduc, sanatos).
+stare_de_sanatate(bella, bolnav).
+stare_de_sanatate(ela, sanatos).
+stare_de_sanatate(helga, sanatos).
+stare_de_sanatate(lolly, sanatos).
+
+pachet(aldo, vip).
+pachet(bruno, standard).
+pachet(cosmo, standard).
+pachet(falco, vip).
+pachet(goofy, standard).
+pachet(haiduc, vip).
+pachet(bella, standard).
+pachet(ela, standard).
+pachet(helga, standard).
+pachet(lolly, vip).
+
+plimbare(aldo).
+plimbare(bruno).
+plimbare(cosmo).
+plimbare(falco).
+plimbare(haiduc).
+plimbare(bella).
+plimbare(lolly).
+
+dresare(aldo).
+dresare(cosmo).
+dresare(falco).
+dresare(haiduc).
+dresare(ela).
+dresare(lolly).
+
+transport(aldo).
+transport(falco).
+transport(goofy).
+transport(haiduc).
+transport(helga).
+transport(lolly).
+
+pachet_spalat(aldo).
+pachet_spalat(bruno).
+pachet_spalat(cosmo).
+pachet_spalat(falco).
+pachet_spalat(haiduc).
+pachet_spalat(ela).
+pachet_spalat(lolly).
+
+pret(standard, 100).
+pret(vip, 150).
+pret(plimbare, 15).
+pret(dresaj, 300).
+pret(transport, 60).
+pret(spalat, 40).
+
+%durata sederii(zile)
+cazat(aldo, 10).
+cazat(bruno, 3).
+cazat(cosmo, 15).
+cazat(falco, 20).
+cazat(goofy, 1).
+cazat(haiduc, 12).
+cazat(bella, 5).
+cazat(ela, 13).
+cazat(helga, 4).
+cazat(lolly, 15).
+
+%REGULI
+diferit(X, Y) :- X \== Y, !.
+
+%true daca se afla in aceeasi cusca, altfel false
+%aflam cu ce caini sta in aceeasi cusca un anume caine
+stau_in_aceeasi_cusca(X, Y) :- (((masculin(X), masculin(Y));(feminin(X), feminin(Y))),diferit(X, Y), cusca(X, Z), cusca(Y, Z)).
+
+pot_sta_in_aceeasi_cusca(X, Y) :- (((masculin(X), masculin(Y));(feminin(X), feminin(Y))),diferit(X, Y), caine(X, Z,_),caine(Y, Z,_)).
+
+pui_sex_masculin(X) :- varsta_ani(X, Y), (Y =< 3), masculin(X).
+pui_sex_feminin(X) :- varsta_ani(X, Y), (Y =< 3), feminin(X).
+adult_sex_masculin(X) :- varsta_ani(X, Y), (Y > 3), masculin(X).
+adult_sex_feminin(X) :- varsta_ani(X, Y), (Y > 3), feminin(X).
+
+este_pui(X) :- varsta_ani(X, Y), (Y =< 3).
+este_adult(X) :- varsta_ani(X, Y), (Y > 3).
+
+%joaca(X, Y) talie + statut(pui, adult) 
+joaca(X, Y) :- (
+                 ( 
+                 	%talie
+                 	(caine(X, talieMica,_),caine(Y, talieMica,_)) ; (caine(X, talieMare,_),caine(Y, talieMare,_)) 
+                 ), 
+               	 (   
+                 	%statut(pui, adult)
+                 	( 
+                    	%pui
+                    	(pui_sex_masculin(X); pui_sex_feminin(X)), (pui_sex_masculin(Y); pui_sex_feminin(Y))
+                    );
+                 	( 
+                    	%adult
+                    	(adult_sex_masculin(X); adult_sex_feminin(X)), (adult_sex_masculin(Y); adult_sex_feminin(Y))
+                    )
+                 ),
+                 diferit(X, Y)
+               ).
+
+%cei mici nu pot manca boabe mari(ce boate pot manca)
+mananca(X, Y) :- (   
+                 	%boabe mici(pui)
+                 	(
+                    	(pui_sex_masculin(X); pui_sex_feminin(X)), Y = 'boabeMici'
+                    );
+                 	%boabe mici(adulti de talie mica)
+                 	( 
+                    	((adult_sex_masculin(X); adult_sex_feminin(X)), caine(X, talieMica,_)), Y = 'boabeMici'
+                    );
+                 	%boabe mari(adulti de talie mare)
+                 	(
+                    	((adult_sex_masculin(X); adult_sex_feminin(X)), caine(X, talieMare,_)), Y = 'boabeMari'
+                    )
+                 ).
+
+%cine ia vitamine si cine ia antibiotice - medicamente(X, antibiotice). 
+%daca este sanatos ia vitamine, daca este bolnav ia antibiotice
+medicamente(X, Y) :- (   
+                     	%sanatos => vitamine
+                     	(   
+                        	stare_de_sanatate(X, sanatos), Y = 'vitamine'
+                        );
+                     	%bolnav => antibiotice
+                     	(   
+                        	stare_de_sanatate(X, bolnav), Y = 'antibiotice'
+                        )
+                     ).
+
+%in carantina(   bolnav, antibiotice) ?????
+carantina(X) :- ( 
+                	stare_de_sanatate(X, bolnav), medicamente(X, antibiotice)
+                ).
+
+%dresaj : energic+ stapanul a platit pentru dresaj + perioada de sedere > 10 zile
+sedere_lunga(X) :-  cazat(X, Y), Y >= 10.
+dresaj(X) :- (  
+              	caine(X, _, energic), dresare(X), sedere_lunga(X)
+              ).
+
+%spalat( pachet + sanatos)
+spalat(X) :- pachet_spalat(X), stare_de_sanatate(X, sanatos).
+
+plimbat(X) :- plimbare(X), stare_de_sanatate(X, sanatos).
+
+%plimbare(   fetele separate de baieti(adulti) + pui separat de adulti + platit + sanatos + impreuna energic cu linistit(maxim 2))
+pot_fi_plimbati_impreuna(X, Y) :- ( 
+                                  	(   
+                                      %statut(pui, adult)
+                                      ( 
+                                          %pui
+                                          (pui_sex_masculin(X); pui_sex_feminin(X)), (pui_sex_masculin(Y); pui_sex_feminin(Y))
+                                      );
+                                      ( 
+                                          %adult
+                                          (adult_sex_masculin(X), adult_sex_masculin(Y)); (adult_sex_feminin(X), adult_sex_feminin(Y))                                   	
+                                      )
+                                   ),
+                                   diferit(X, Y),
+                                   plimbat(X), plimbat(Y),
+                                   (
+                                       (
+                                          caine(X,_, energic), caine(Y,_, linistit)
+                                       );
+                                       (
+                                          caine(X,_, linistit), caine(Y,_, energic)
+                                       )
+                                   )
+                                  ).
+
+%pachetEXtraVip daca sedere > 10 zile, plimbat, dresaj, transport 
+pachetEXtraVip(X) :- (   
+                     	cazat(X, Y), Y > 10, plimbare(X), dresaj(X), transport(X)
+                     ).
+
+cate_animale_sunt_cazate([], 0).
+cate_animale_sunt_cazate([_|X], N) :- cate_animale_sunt_cazate(X, N1), N is N1 + 1.
+
+%pretul_cel_mai_mic([100, 150, 40, 300, 60, 15], X, Z).
+pretul_cel_mai_mic([X, Y], X, Z) :- X =< Y, pret(Z, X), !.
+pretul_cel_mai_mic([X, Y], Y, Z) :- X > Y, pret(Z, Y), !.
+pretul_cel_mai_mic([H|X], Y, Z) :- pretul_cel_mai_mic(X, Y, Z), H >= Y, !.
+pretul_cel_mai_mic([H|X], H, Z) :- pretul_cel_mai_mic(X, Y, Z), H < Y, !.
+
+nume_animale(X) :- findall(X, (caine(X,_,_)), L), member(X, L).

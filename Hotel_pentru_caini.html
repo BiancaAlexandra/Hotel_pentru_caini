@@ -1,0 +1,1132 @@
+<!-- Orbisor Bianca-Alexandra
+	grupa : 343A3 -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Hotel pentru caini</title>
+		<meta charset="UTF-8">
+		<style>
+			body {
+			  font-family: Arial, Helvetica, sans-serif;
+			}
+			.header {
+			  padding: 80px; /* some padding */
+			  text-align: center; /* center the text */
+			  background: #1abc9c; /* green background */
+			  color: white; /* white text color */
+			}
+			/* Increase the font size of the <h1> element */
+			.header h1 {
+			  font-size: 40px;
+			}
+			/* Style the top navigation bar */
+			.navbar {
+			  overflow: hidden; /* Hide overflow */
+			  background-color: #333; /* Dark background color */
+			}
+
+			/* Style the navigation bar links */
+			.navbar button {
+			  background-color: #333;
+			  float: left;
+			  border: none;
+			  outline: none;
+			  cursor: pointer;
+			  padding: 14px 16px;
+			  transition: 0.3s;
+			  font-size: 17px;
+			  color: white;
+			}
+
+			/* Change color on hover/mouse-over */
+			.navbar button:hover {
+			  background-color: #ddd; /* Grey background color */
+			  color: black; /* Black text color */
+			}
+
+			/* Ensure proper sizing */
+			* {
+			  box-sizing: border-box;
+			}
+
+			/* Column container */
+			.row {
+			  display: flex;
+			  flex-wrap: wrap;
+			}
+
+			/* Create two unequal columns that sits next to each other */
+			/* Sidebar/left column */
+			.side {
+			  flex: 35%; /* Set the width of the sidebar */
+			  background-color: #f1f1f1; /* Grey background color */
+			  padding: 20px; /* Some padding */
+			}
+
+			/* Main column */
+			.main {
+			  flex: 65%; /* Set the width of the main content */
+			  background-color: white; /* White background color */
+			  padding: 20px; /* Some padding */
+			}
+
+			#mainB {
+				text-align: center;
+				font-size: 150%;
+			}
+
+			/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+			@media screen and (max-width: 700px) {
+			  .row {   
+			    flex-direction: column;
+			  }
+			}
+
+			/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+			@media screen and (max-width: 400px) {
+			  .navbar a {
+			    float: none;
+			    width:100%;
+			  }
+			}
+
+			.footer {
+			  padding: 20px; /* Some padding */
+			  text-align: center; /* Center text*/
+			  background: #ddd; /* Grey background */
+			}
+
+			/* Container holding the image and the text */
+			.container {
+			  position: relative;
+			  text-align: center;
+			  color: white;
+			  font-size: 150%;
+			}
+			/* Centered text */
+			.centered {
+			  position: absolute;
+			  top: 50%;
+			  left: 50%;
+			  transform: translate(-50%, -50%);
+			}
+
+			input[type=text] {
+			  width: 130px;
+			  box-sizing: border-box;
+			  border: 2px solid #ccc;
+			  border-radius: 4px;
+			  font-size: 16px;
+			  background-color: white;
+			  background-position: 10px 10px; 
+			  background-repeat: no-repeat;
+			  padding: 12px 20px 12px 40px;
+			  -webkit-transition: width 0.4s ease-in-out;
+			  transition: width 0.4s ease-in-out;
+			}
+
+			input[type=text]:focus {
+			  width: 100%;
+			}
+
+			#inp1, #inp2, #inp3, #inp4, #inp5, #inp6, #inp7, #inp8, #inp9 {
+			  font-family: Arial, Helvetica, sans-serif;
+			}
+		</style>
+	</head>
+	<body>
+
+		<div class="container">
+		  <img class="mySlides" src="caine1.jpg" style="width:100%">
+		  <img class="mySlides" src="caine4.jpg" style="width:100%">
+		  <img class="mySlides" src="caine5.jpg" style="width:100%">
+		  <img class="mySlides" src="caine7.jpg" style="width:100%">
+		  <div class="centered">HOTEL PENTRU CAINI</div>
+		</div>
+
+		<div class="navbar">
+		  <button onclick="cainiCazati()">Caini cazati</button>
+		  <button onclick="nume()">Nume</button>
+		  <button onclick="sex()">Sex</button>
+		  <button onclick="cusca()">Cusca</button>
+		  <button onclick="varsta()">Varsta</button>
+		  <button onclick="stareSanatate()">Stare de sanatate</button>
+		  <button onclick="durataCazare()">Durata cazare</button>
+		  <button onclick="plimbare()">Plimbare</button>
+		  <button onclick="dresare()">Dresaj</button>
+		  <button onclick="transport()">Transport</button>
+		  <button onclick="pret()">Preturi</button>
+		  <button onclick="custi()">Custi</button>
+		</div>
+
+		<div class="row">
+		  <div class="side">
+		  	<p id="sideB">
+
+		  		<!--Cainele X este diferit de cainele Y?-->
+		  		<p id="inp1"></p>
+		  		<input type="text" placeholder="Caine X" id="search1">
+				<br>
+		  		<input type="text" placeholder="Caine Y" id="search2">
+    			<button type="button" onclick="diferit('search1', 'search2');">Get Value</button>
+
+    			<!--Cainele X sta in aceeasi cusca cu cainele Y?-->
+		  		<p id="inp2"></p>
+		  		<input type="text" name="search" placeholder="Caine X" id="search3">
+				<br>
+		  		<input type="text" placeholder="Caine Y" id="search4">
+    			<button type="button" onclick="stauInAceeasiCusca('search3', 'search4');">Get Value</button>
+
+    			<!--X este pui de sex masculin-->
+		  		<p id="inp3"></p>
+		  		<input type="text" name="search" placeholder="Caine X" id="search5">
+    			<button type="button" onclick="puiSexMasculin('search5');">Get Value</button>
+
+    			<!--X este pui de sex feminin-->
+		  		<p id="inp4"></p>
+		  		<input type="text" name="search" placeholder="Caine X" id="search6">
+    			<button type="button" onclick="puiSexFeminin('search6');">Get Value</button>
+
+    			<!--X este adult de sex masculin-->
+		  		<p id="inp5"></p>
+		  		<input type="text" name="search" placeholder="Caine X" id="search7">
+    			<button type="button" onclick="adultSexMasculin('search7');">Get Value</button>
+
+    			<!--X este adult de sex feminin-->
+		  		<p id="inp6"></p>
+		  		<input type="text" name="search" placeholder="Caine X" id="search8">
+    			<button type="button" onclick="adultSexFeminin('search8');">Get Value</button>
+
+    			<!--X ia medicamente(vitamine sau antibiotice)?-->
+		  		<p id="inp7"></p>
+		  		<input type="text" name="search" placeholder="Caine X" id="search9">
+    			<button type="button" onclick="medicamente('search9');">Get Value</button>
+
+    			<!--Sedere lunga?-->
+		  		<p id="inp8"></p>
+		  		<input type="text" name="search" placeholder="Caine X" id="search10">
+    			<button type="button" onclick="sedereLunga('search10');">Get Value</button>
+
+    			<!--Pachet extravip?-->
+		  		<p id="inp9"></p>
+		  		<input type="text" name="search" placeholder="Caine X" id="search11">
+    			<button type="button" onclick="extraVip('search11');">Get Value</button>
+		  	</p>
+		  </div>
+		  <div class="main">
+		  	<p id="mainB">
+		  	</p>
+		  </div>
+		</div>
+
+		<div class="footer">
+		  <h2>Orbisor Bianca-Alexandra</h2>
+		  <h4>grupa 343A3</h4>
+		</div>
+
+		<script>
+			var nrCaini = 10;
+			var xhttp = new XMLHttpRequest();
+			var myIndex = 0;
+			carousel();
+			
+			xhttp.onreadystatechange = function() {
+			    if (this.readyState == 4 && this.status == 200) {
+			        myFunction(this);
+			    }
+			};
+			xhttp.open("GET", "hotelCaini.xml", true);
+			xhttp.send();
+
+			function myFunction(xml) {
+			  	var parser, xmlDoc;
+			  	var reg1 = "";
+			  	var reg2 = "";
+			  	var reg3 = "";
+			  	var reg4 = "";
+			  	var reg5 = "";
+			  	var reg6 = "";
+			  	var reg7 = "";
+			  	var reg8 = "";
+			  	var reg9 = "";
+
+			  	parser = new DOMParser();
+			  	xmlDoc = parser.parseFromString(xml.responseText,"text/xml");
+
+			  	//reg1
+			  	reg1 = xmlDoc.getElementsByTagName("rel")[0].childNodes[0].nodeValue + "(" + xmlDoc.getElementsByTagName("catel")[2].childNodes[0].nodeValue + ", " + 
+			  	xmlDoc.getElementsByTagName("catel")[3].childNodes[0].nodeValue + ").";
+			  	document.getElementById("inp1").innerHTML = reg1;
+
+			  	//reg2
+			  	reg2 = xmlDoc.getElementsByTagName("rel")[8].childNodes[0].nodeValue + "(" + xmlDoc.getElementsByTagName("catel")[14].childNodes[0].nodeValue + ", " + 
+			  	xmlDoc.getElementsByTagName("catel")[15].childNodes[0].nodeValue + ").**";
+			  	document.getElementById("inp2").innerHTML = reg2;
+
+			  	//reg3
+			  	reg3 = xmlDoc.getElementsByTagName("rel")[11].childNodes[0].nodeValue + "(" + xmlDoc.getElementsByTagName("catel")[18].childNodes[0].nodeValue + ").*";
+			  	document.getElementById("inp3").innerHTML = reg3;
+
+			  	//reg4
+			  	reg4 = xmlDoc.getElementsByTagName("rel")[14].childNodes[0].nodeValue + "(" + xmlDoc.getElementsByTagName("catel")[21].childNodes[0].nodeValue + ").*";
+			  	document.getElementById("inp4").innerHTML = reg4;
+
+			  	//reg5
+			  	reg5 = xmlDoc.getElementsByTagName("rel")[17].childNodes[0].nodeValue + "(" + xmlDoc.getElementsByTagName("catel")[24].childNodes[0].nodeValue + ").*";
+			  	document.getElementById("inp5").innerHTML = reg5;
+
+			  	//reg6
+			  	reg6 = xmlDoc.getElementsByTagName("rel")[20].childNodes[0].nodeValue + "(" + xmlDoc.getElementsByTagName("catel")[27].childNodes[0].nodeValue + ").*";
+			  	document.getElementById("inp6").innerHTML = reg6;
+
+			  	//reg7
+			  	reg7 = xmlDoc.getElementsByTagName("rel")[24].childNodes[0].nodeValue + "(" + xmlDoc.getElementsByTagName("catel")[28].childNodes[0].nodeValue + ").*";
+			  	document.getElementById("inp7").innerHTML = reg7;
+
+			  	//reg8
+			  	reg8 = xmlDoc.getElementsByTagName("rel")[27].childNodes[0].nodeValue + "(" + xmlDoc.getElementsByTagName("catel")[32].childNodes[0].nodeValue + ").*";
+			  	document.getElementById("inp8").innerHTML = reg8;
+
+			  	//reg9
+			  	reg9 = xmlDoc.getElementsByTagName("rel")[32].childNodes[0].nodeValue + "(" + xmlDoc.getElementsByTagName("catel")[36].childNodes[0].nodeValue + ").*";
+			  	document.getElementById("inp9").innerHTML = reg9;
+			}
+
+			function carousel() {
+			  var i;
+			  var x = document.getElementsByClassName("mySlides");
+			  for (i = 0; i < x.length; i++) {
+			    x[i].style.display = "none";
+			  }
+			  myIndex++;
+			  if (myIndex > x.length) {myIndex = 1}
+			  x[myIndex-1].style.display = "block";
+			  setTimeout(carousel, 5000);
+			}
+
+			function cainiCazati() {
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+				    if (this.readyState == 4 && this.status == 200) {
+				        var parser, xmlDoc;
+					  	var text = "";
+					  	parser = new DOMParser();
+					  	xmlDoc = parser.parseFromString(this.responseText,"text/xml");
+					  	for(var i = 0; i < nrCaini; i++) {
+					  		text = text + xmlDoc.getElementsByTagName("nume")[i].childNodes[0].nodeValue + "<br>";
+					  	}
+					  	document.getElementById("mainB").innerHTML = "Cainii cazati in hotel:" + "<br><br>" + text;
+				    }
+				};
+				xhttp.open("GET", "hotelCaini.xml", true);
+				xhttp.send();
+			}
+
+			function pret() {
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+				    if (this.readyState == 4 && this.status == 200) {
+				        var parser, xmlDoc;
+					  	var standard = "";
+					  	var vip = "";
+					  	var plimbare = "";
+					  	var dresaj = "";
+					  	var transport = "";
+					  	var spalat = "";
+					  	parser = new DOMParser();
+					  	xmlDoc = parser.parseFromString(this.responseText,"text/xml");
+					  	for(var i = 0; i < 1; i++) {
+					  		standard = xmlDoc.getElementsByTagName("standard")[i].childNodes[0].nodeValue + "lei " + "<br>";
+					  		vip = xmlDoc.getElementsByTagName("vip")[i].childNodes[0].nodeValue + "lei " + "<br>";
+					  		plimbare = xmlDoc.getElementsByTagName("plimbare")[i].childNodes[0].nodeValue + "lei " + "<br>";
+					  		dresaj = xmlDoc.getElementsByTagName("dresaj")[i].childNodes[0].nodeValue + "lei " + "<br>";
+					  		transport = xmlDoc.getElementsByTagName("transport")[i].childNodes[0].nodeValue + "lei " + "<br>";
+					  		spalat = xmlDoc.getElementsByTagName("spalat")[i].childNodes[0].nodeValue + "lei " + "<br>";
+					  	}
+					  	document.getElementById("mainB").innerHTML = "Preturi" + "<br><br>" + "Sandard: " + standard + "Vip: " + vip + "Plimbare: " + plimbare + "Dresaj: " + dresaj + "Transport: " + transport + "Spalat: " + spalat;
+				    }
+				};
+				xhttp.open("GET", "hotelCaini.xml", true);
+				xhttp.send();
+			}
+
+			function nume() {
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+				    if (this.readyState == 4 && this.status == 200) {
+				        var parser, xmlDoc;
+					  	var text = "";
+					  	text = text + "Nume : " + "<br><br>";
+
+					  	parser = new DOMParser();
+					  	xmlDoc = parser.parseFromString(this.responseText,"text/xml");
+
+					  	for(var i = 0; i < nrCaini; i++) {
+					  		text = text + xmlDoc.getElementsByTagName("nume")[i].childNodes[0].nodeValue + "<br>";
+					  		
+					  	}
+					  	document.getElementById("mainB").innerHTML = text;
+				    }
+				};
+				xhttp.open("GET", "hotelCaini.xml", true);
+				xhttp.send();
+			}
+
+		  	function sex() {
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+				    if (this.readyState == 4 && this.status == 200) {
+				        var parser, xmlDoc;
+					  	var text = "";
+					  	text = text + "Sex : " + "<br><br>";
+		
+					  	parser = new DOMParser();
+					  	xmlDoc = parser.parseFromString(this.responseText,"text/xml");
+
+					  	for(var i = 0; i < nrCaini; i++) {
+					  		text = text + xmlDoc.getElementsByTagName("nume")[i].childNodes[0].nodeValue + "  -  " + xmlDoc.getElementsByTagName("sex")[i].childNodes[0].nodeValue + "<br>";
+					  	}
+					  	document.getElementById("mainB").innerHTML = text;
+				    }
+				};
+				xhttp.open("GET", "hotelCaini.xml", true);
+				xhttp.send();
+			}
+
+			function cusca() {
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+				    if (this.readyState == 4 && this.status == 200) {
+				        var parser, xmlDoc;
+					  	var text = "";
+					  	text = text + "Cusca : " + "<br><br>";
+		
+					  	parser = new DOMParser();
+					  	xmlDoc = parser.parseFromString(this.responseText,"text/xml");
+
+					  	for(var i = 0; i < nrCaini; i++) {
+					  		text = text + xmlDoc.getElementsByTagName("nume")[i].childNodes[0].nodeValue + "  -  " + xmlDoc.getElementsByTagName("cusca")[i].childNodes[0].nodeValue + "<br>";
+					  	}
+					  	document.getElementById("mainB").innerHTML = text;
+				    }
+				};
+				xhttp.open("GET", "hotelCaini.xml", true);
+				xhttp.send();
+			}
+
+			function varsta() {
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+				    if (this.readyState == 4 && this.status == 200) {
+				        var parser, xmlDoc;
+					  	var text = "";
+					  	text = text + "Varsta : " + "<br><br>";
+		
+					  	parser = new DOMParser();
+					  	xmlDoc = parser.parseFromString(this.responseText,"text/xml");
+
+					  	for(var i = 0; i < nrCaini; i++) {
+					  		text = text + xmlDoc.getElementsByTagName("nume")[i].childNodes[0].nodeValue + "  -  " + xmlDoc.getElementsByTagName("varsta")[i].childNodes[0].nodeValue + " ani " + "<br>";
+					  	}
+					  	document.getElementById("mainB").innerHTML = text;
+				    }
+				};
+				xhttp.open("GET", "hotelCaini.xml", true);
+				xhttp.send();
+			}
+
+			function stareSanatate() {
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+				    if (this.readyState == 4 && this.status == 200) {
+				        var parser, xmlDoc;
+					  	var text = "";
+					  	text = text + "Strare de sanatate : " + "<br><br>";
+		
+					  	parser = new DOMParser();
+					  	xmlDoc = parser.parseFromString(this.responseText,"text/xml");
+
+					  	for(var i = 0; i < nrCaini; i++) {
+					  		text = text + xmlDoc.getElementsByTagName("nume")[i].childNodes[0].nodeValue + "  -  " + xmlDoc.getElementsByTagName("stare_sanatate")[i].childNodes[0].nodeValue + "<br>";
+					  	}
+					  	document.getElementById("mainB").innerHTML = text;
+				    }
+				};
+				xhttp.open("GET", "hotelCaini.xml", true);
+				xhttp.send();
+			}
+
+		  	function durataCazare() {
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+				    if (this.readyState == 4 && this.status == 200) {
+				        var parser, xmlDoc;
+					  	var text = "";
+					  	text = text + "Durata cazare : " + "<br><br>";
+		
+					  	parser = new DOMParser();
+					  	xmlDoc = parser.parseFromString(this.responseText,"text/xml");
+
+					  	for(var i = 0; i < nrCaini; i++) {
+					  		text = text + xmlDoc.getElementsByTagName("nume")[i].childNodes[0].nodeValue + "  -  " + xmlDoc.getElementsByTagName("durata_cazare")[i].childNodes[0].nodeValue + " zile" + "<br>";
+					  	}
+					  	document.getElementById("mainB").innerHTML = text;
+				    }
+				};
+				xhttp.open("GET", "hotelCaini.xml", true);
+				xhttp.send();
+			}
+
+			function plimbare() {
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+				    if (this.readyState == 4 && this.status == 200) {
+				        var parser, xmlDoc;
+					  	var text = "";
+					  	text = text + "Plimbare : " + "<br><br>";
+		
+					  	parser = new DOMParser();
+					  	xmlDoc = parser.parseFromString(this.responseText,"text/xml");
+
+					  	for(var i = 0; i < nrCaini; i++) {
+					  		text = text + xmlDoc.getElementsByTagName("nume")[i].childNodes[0].nodeValue + "  -  " + xmlDoc.getElementsByTagName("plimbare")[i].childNodes[0].nodeValue + "<br>";
+					  	}
+					  	document.getElementById("mainB").innerHTML = text;
+				    }
+				};
+				xhttp.open("GET", "hotelCaini.xml", true);
+				xhttp.send();
+			}
+
+			function dresare() {
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+				    if (this.readyState == 4 && this.status == 200) {
+				        var parser, xmlDoc;
+					  	var text = "";
+					  	text = text + "Dresaj : " + "<br><br>";
+		
+					  	parser = new DOMParser();
+					  	xmlDoc = parser.parseFromString(this.responseText,"text/xml");
+
+					  	for(var i = 0; i < nrCaini; i++) {
+					  		text = text + xmlDoc.getElementsByTagName("nume")[i].childNodes[0].nodeValue + "  -  " + xmlDoc.getElementsByTagName("dresare")[i].childNodes[0].nodeValue + "<br>";
+					  	}
+					  	document.getElementById("mainB").innerHTML = text;
+				    }
+				};
+				xhttp.open("GET", "hotelCaini.xml", true);
+				xhttp.send();
+			}
+
+			function transport() {
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+				    if (this.readyState == 4 && this.status == 200) {
+				        var parser, xmlDoc;
+					  	var text = "";
+					  	text = text + "Transport : " + "<br><br>";
+		
+					  	parser = new DOMParser();
+					  	xmlDoc = parser.parseFromString(this.responseText,"text/xml");
+
+					  	for(var i = 0; i < nrCaini; i++) {
+					  		text = text + xmlDoc.getElementsByTagName("nume")[i].childNodes[0].nodeValue + "  -  " + xmlDoc.getElementsByTagName("transport")[i].childNodes[0].nodeValue + "<br>";
+					  	}
+					  	document.getElementById("mainB").innerHTML = text;
+				    }
+				};
+				xhttp.open("GET", "hotelCaini.xml", true);
+				xhttp.send();
+			}
+
+			function custi() {
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+				    if (this.readyState == 4 && this.status == 200) {
+				        var parser, xmlDoc;
+					  	var text = "";
+
+					  	parser = new DOMParser();
+					  	xmlDoc = parser.parseFromString(this.responseText,"text/xml");
+					  	for(var i = 0; i < 4; i++) {
+					  		text = text + "Cusca nr." + (i+1) + " : " + xmlDoc.getElementsByTagName("nr_locuri")[i].childNodes[0].nodeValue + " locuri " + "<br>";
+					  	}
+					  	document.getElementById("mainB").innerHTML = "Numarul de locuri pentru fiecare cusca:" + "<br><br>" + text;
+				    }
+				};
+				xhttp.open("GET", "hotelCaini.xml", true);
+				xhttp.send();
+			}
+
+			function diferit(val1, val2) {
+	            // Selecting the input element and get its value 
+	            var inputVal1 = document.getElementById(val1).value;
+	            var inputVal2 = document.getElementById(val2).value;
+	         	//document.getElementById("mainB").innerHTML = inputVal1 + "<br>" + inputVal2;
+
+	         	var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+				    if (this.readyState == 4 && this.status == 200) {
+				        var parser, xmlDoc;
+					  	var text = "";
+					  	parser = new DOMParser();
+					  	xmlDoc = parser.parseFromString(this.responseText,"text/xml");
+
+					  	text = xmlDoc.getElementsByTagName("operatie")[0].childNodes[0].nodeValue;
+					  	if(inputVal1 != inputVal2) {
+					  		document.getElementById("mainB").innerHTML = "yes";
+					  	}
+					  	else {
+					  		document.getElementById("mainB").innerHTML = "no";
+					  	}
+				    }
+				};
+				xhttp.open("GET", "hotelCaini.xml", true);
+				xhttp.send();
+	        }
+
+	        function stauInAceeasiCusca(inputVal1, inputVal2) {
+	        	// Selecting the input element and get its value 
+	            var nume1 = document.getElementById(inputVal1).value;
+	            var nume2 = document.getElementById(inputVal2).value;
+	         	
+	         	var xhttp = new XMLHttpRequest();
+
+				xhttp.onreadystatechange = function() {
+				    if (this.readyState == 4 && this.status == 200) {
+				        var parser, xmlDoc;
+				        var nume = "";
+					  	var mascX = "";
+					  	var mascY = "";
+					  	var femX = "";
+					  	var femY = "";
+					  	var sexX;
+					  	var sexY;
+					  	var cuscaX;
+					  	var cuscaY;
+					  	var text = "";
+					  	parser = new DOMParser();
+					  	xmlDoc = parser.parseFromString(this.responseText,"text/xml");		
+
+					  	mascX = xmlDoc.getElementsByTagName("rel")[1].childNodes[0].nodeValue;
+						mascY = xmlDoc.getElementsByTagName("rel")[2].childNodes[0].nodeValue;
+						femX = xmlDoc.getElementsByTagName("rel")[3].childNodes[0].nodeValue;
+						femY = xmlDoc.getElementsByTagName("rel")[4].childNodes[0].nodeValue;
+						//diferit(val1, val2);
+						//nrcuscaX = nrcuscaY
+
+					  	if((nume1 != "") && (nume2 != "")) {	  	
+						  	for(var i = 0; i < nrCaini; i++) {
+						  		nume = xmlDoc.getElementsByTagName("nume")[i].childNodes[0].nodeValue;
+						  		if(nume == nume1) {
+						  			sexX = xmlDoc.getElementsByTagName("sex")[i].childNodes[0].nodeValue;
+						  			cuscaX = xmlDoc.getElementsByTagName("cusca")[i].childNodes[0].nodeValue;
+						  		}
+						  		if(nume == nume2) {
+						  			sexY = xmlDoc.getElementsByTagName("sex")[i].childNodes[0].nodeValue;
+						  			cuscaY = xmlDoc.getElementsByTagName("cusca")[i].childNodes[0].nodeValue;
+						  		}
+						  	}
+
+						}
+						else {
+							if(nume1 == "") {
+								for(var i = 0; i < nrCaini; i++) {
+							  		nume = xmlDoc.getElementsByTagName("nume")[i].childNodes[0].nodeValue;
+							  		if(nume == nume2) {
+							  			sexY = xmlDoc.getElementsByTagName("sex")[i].childNodes[0].nodeValue;
+							  		}
+							  	}
+							  	for(var i = 0; i < nrCaini; i++) {
+							  		nume = xmlDoc.getElementsByTagName("nume")[i].childNodes[0].nodeValue;
+							  		sexX = xmlDoc.getElementsByTagName("sex")[i].childNodes[0].nodeValue;
+						  			if((((sexX == mascX) && (sexY == mascY)) || ((sexX == femX) && (sexY == femY))) && (nume != nume2)) {
+									  		text = text + nume + "<br>";
+									}
+							  	}
+							}
+							else {
+								if(nume2 == "") {
+									for(var i = 0; i < nrCaini; i++) {
+								  		nume = xmlDoc.getElementsByTagName("nume")[i].childNodes[0].nodeValue;
+								  		if(nume == nume1) {
+								  			sexX = xmlDoc.getElementsByTagName("sex")[i].childNodes[0].nodeValue;
+								  		}
+								  	}
+								  	for(var i = 0; i < nrCaini; i++) {
+								  		nume = xmlDoc.getElementsByTagName("nume")[i].childNodes[0].nodeValue;
+								  		sexY = xmlDoc.getElementsByTagName("sex")[i].childNodes[0].nodeValue;
+							  			if((((sexX == mascX) && (sexY == mascY)) || ((sexX == femX) && (sexY == femY))) && (nume != nume1)) {
+										  		text = text + nume + "<br>";
+										}
+								  	}
+								}
+							}
+						}
+						if(text != "") {
+							document.getElementById("mainB").innerHTML = text;
+						}
+						else {
+							if((((sexX == mascX) && (sexY == mascY)) || ((sexX == femX) && (sexY == femY))) && (diferit(inputVal1, inputVal2)) && (cuscaX == cuscaY)) {
+							  		document.getElementById("mainB").innerHTML = "yes";
+							}
+							else {
+							  	document.getElementById("mainB").innerHTML = "no";
+							}
+						}
+				    }
+				};
+				xhttp.open("GET", "hotelCaini.xml", true);
+				xhttp.send();
+	        }
+
+	        function puiSexMasculin(val1) {
+	        	// Selecting the input element and get its value 
+	            var nume1 = document.getElementById(val1).value;
+	         	//document.getElementById("mainB").innerHTML = inputVal1 + "<br>" + inputVal2;
+
+	         	var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+				    if (this.readyState == 4 && this.status == 200) {
+				        var parser, xmlDoc;
+					  	var varsta;
+					  	var cond = "";
+					  	var mascX = "";
+					  	var condValoare;
+					  	var sex = "";
+					  	var varstaX;
+					  	var nume = "";
+					  	var text = "";
+
+					  	parser = new DOMParser();
+					  	xmlDoc = parser.parseFromString(this.responseText,"text/xml");
+
+					  	varsta = parseInt(xmlDoc.getElementsByTagName("rel")[9].childNodes[0].nodeValue, 10);
+						cond = xmlDoc.getElementsByTagName("cond")[0].childNodes[0].nodeValue;
+						mascX = xmlDoc.getElementsByTagName("rel")[10].childNodes[0].nodeValue;
+						condValoare = parseInt(xmlDoc.getElementsByTagName("cond_val")[0].childNodes[0].nodeValue, 10);
+
+					  	if(nume1 != "") {
+					  		for(var i = 0; i < nrCaini; i++) {
+						  		nume = xmlDoc.getElementsByTagName("nume")[i].childNodes[0].nodeValue;
+						  		if(nume == nume1) {
+						  			varstaX = parseInt(xmlDoc.getElementsByTagName("varsta")[i].childNodes[0].nodeValue, 10);
+						  			sex = xmlDoc.getElementsByTagName("sex")[i].childNodes[0].nodeValue;
+						  		}
+						  	}
+					  		if((varstaX <= condValoare) && (sex == mascX))
+					  			document.getElementById("mainB").innerHTML = "yes";
+					  		else {
+					  			document.getElementById("mainB").innerHTML = "no";
+					  		}
+					  	}
+						else {
+							if(nume1 == "") {
+							  	for(var i = 0; i < nrCaini; i++) {
+							  		nume = xmlDoc.getElementsByTagName("nume")[i].childNodes[0].nodeValue;
+							  		sex = xmlDoc.getElementsByTagName("sex")[i].childNodes[0].nodeValue;
+							  		varstaX = parseInt(xmlDoc.getElementsByTagName("varsta")[i].childNodes[0].nodeValue, 10);
+						  			if((varstaX <= condValoare) && (sex == mascX)) {
+						  				text = text + nume + "<br>";
+						  			}
+							  	}
+							  	if(text != "") {
+									document.getElementById("mainB").innerHTML = text;
+								}
+							}
+						}
+					  	
+				    }
+				};
+				xhttp.open("GET", "hotelCaini.xml", true);
+				xhttp.send();
+	        }
+
+	        function puiSexFeminin(val1) {
+	        	// Selecting the input element and get its value 
+	            var nume1 = document.getElementById(val1).value;
+
+	         	var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+				    if (this.readyState == 4 && this.status == 200) {
+				        var parser, xmlDoc;
+					  	var varsta;
+					  	var cond = "";
+					  	var femX = "";
+					  	var condValoare;
+					  	var sex = "";
+					  	var varstaX;
+					  	var nume = "";
+					  	var text = "";
+
+					  	parser = new DOMParser();
+					  	xmlDoc = parser.parseFromString(this.responseText,"text/xml");
+
+					  	varsta = parseInt(xmlDoc.getElementsByTagName("rel")[12].childNodes[0].nodeValue, 10);
+						cond = xmlDoc.getElementsByTagName("cond")[1].childNodes[0].nodeValue;
+						femX = xmlDoc.getElementsByTagName("rel")[13].childNodes[0].nodeValue;
+						condValoare = parseInt(xmlDoc.getElementsByTagName("cond_val")[1].childNodes[0].nodeValue, 10);
+
+					  	if(nume1 != "") {
+					  		for(var i = 0; i < nrCaini; i++) {
+						  		nume = xmlDoc.getElementsByTagName("nume")[i].childNodes[0].nodeValue;
+						  		if(nume == nume1) {
+						  			varstaX = parseInt(xmlDoc.getElementsByTagName("varsta")[i].childNodes[0].nodeValue, 10);
+						  			sex = xmlDoc.getElementsByTagName("sex")[i].childNodes[0].nodeValue;
+						  		}
+						  	}
+					  		if((varstaX <= condValoare) && (sex == femX))
+					  			document.getElementById("mainB").innerHTML = "yes";
+					  		else {
+					  			document.getElementById("mainB").innerHTML = "no";
+					  		}
+					  	}
+						else {
+							if(nume1 == "") {
+							  	for(var i = 0; i < nrCaini; i++) {
+							  		nume = xmlDoc.getElementsByTagName("nume")[i].childNodes[0].nodeValue;
+							  		sex = xmlDoc.getElementsByTagName("sex")[i].childNodes[0].nodeValue;
+							  		varstaX = parseInt(xmlDoc.getElementsByTagName("varsta")[i].childNodes[0].nodeValue, 10);
+						  			if((varstaX <= condValoare) && (sex == femX)) {
+						  				text = text + nume + "<br>";
+						  			}
+							  	}
+							  	if(text != "") {
+									document.getElementById("mainB").innerHTML = text;
+								}
+							}
+						}
+					  	
+				    }
+				};
+				xhttp.open("GET", "hotelCaini.xml", true);
+				xhttp.send();
+	        }
+
+	        function adultSexMasculin(val1) {
+	        	// Selecting the input element and get its value 
+	            var nume1 = document.getElementById(val1).value;
+
+	         	var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+				    if (this.readyState == 4 && this.status == 200) {
+				        var parser, xmlDoc;
+					  	var varsta;
+					  	var cond = "";
+					  	var mascX = "";
+					  	var condValoare;
+					  	var sex = "";
+					  	var varstaX;
+					  	var nume = "";
+					  	var text = "";
+
+					  	parser = new DOMParser();
+					  	xmlDoc = parser.parseFromString(this.responseText,"text/xml");
+
+					  	varsta = parseInt(xmlDoc.getElementsByTagName("rel")[9].childNodes[0].nodeValue, 10);
+						cond = xmlDoc.getElementsByTagName("cond")[0].childNodes[0].nodeValue;
+						mascX = xmlDoc.getElementsByTagName("rel")[10].childNodes[0].nodeValue;
+						condValoare = parseInt(xmlDoc.getElementsByTagName("cond_val")[0].childNodes[0].nodeValue, 10);
+
+					  	if(nume1 != "") {
+					  		for(var i = 0; i < nrCaini; i++) {
+						  		nume = xmlDoc.getElementsByTagName("nume")[i].childNodes[0].nodeValue;
+						  		if(nume == nume1) {
+						  			varstaX = parseInt(xmlDoc.getElementsByTagName("varsta")[i].childNodes[0].nodeValue, 10);
+						  			sex = xmlDoc.getElementsByTagName("sex")[i].childNodes[0].nodeValue;
+						  		}
+						  	}
+					  		if((varstaX > condValoare) && (sex == mascX))
+					  			document.getElementById("mainB").innerHTML = "yes";
+					  		else {
+					  			document.getElementById("mainB").innerHTML = "no";
+					  		}
+					  	}
+						else {
+							if(nume1 == "") {
+							  	for(var i = 0; i < nrCaini; i++) {
+							  		nume = xmlDoc.getElementsByTagName("nume")[i].childNodes[0].nodeValue;
+							  		sex = xmlDoc.getElementsByTagName("sex")[i].childNodes[0].nodeValue;
+							  		varstaX = parseInt(xmlDoc.getElementsByTagName("varsta")[i].childNodes[0].nodeValue, 10);
+						  			if((varstaX > condValoare) && (sex == mascX)) {
+						  				text = text + nume + "<br>";
+						  			}
+							  	}
+							  	if(text != "") {
+									document.getElementById("mainB").innerHTML = text;
+								}
+							}
+						}
+					  	
+				    }
+				};
+				xhttp.open("GET", "hotelCaini.xml", true);
+				xhttp.send();
+	        }
+
+	        function adultSexFeminin(val1) {
+	        	// Selecting the input element and get its value 
+	            var nume1 = document.getElementById(val1).value;
+
+	         	var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+				    if (this.readyState == 4 && this.status == 200) {
+				        var parser, xmlDoc;
+					  	var varsta;
+					  	var cond = "";
+					  	var femX = "";
+					  	var condValoare;
+					  	var sex = "";
+					  	var varstaX;
+					  	var nume = "";
+					  	var text = "";
+
+					  	parser = new DOMParser();
+					  	xmlDoc = parser.parseFromString(this.responseText,"text/xml");
+
+					  	varsta = parseInt(xmlDoc.getElementsByTagName("rel")[12].childNodes[0].nodeValue, 10);
+						cond = xmlDoc.getElementsByTagName("cond")[1].childNodes[0].nodeValue;
+						femX = xmlDoc.getElementsByTagName("rel")[13].childNodes[0].nodeValue;
+						condValoare = parseInt(xmlDoc.getElementsByTagName("cond_val")[1].childNodes[0].nodeValue, 10);
+
+					  	if(nume1 != "") {
+					  		for(var i = 0; i < nrCaini; i++) {
+						  		nume = xmlDoc.getElementsByTagName("nume")[i].childNodes[0].nodeValue;
+						  		if(nume == nume1) {
+						  			varstaX = parseInt(xmlDoc.getElementsByTagName("varsta")[i].childNodes[0].nodeValue, 10);
+						  			sex = xmlDoc.getElementsByTagName("sex")[i].childNodes[0].nodeValue;
+						  		}
+						  	}
+					  		if((varstaX > condValoare) && (sex == femX))
+					  			document.getElementById("mainB").innerHTML = "yes";
+					  		else {
+					  			document.getElementById("mainB").innerHTML = "no";
+					  		}
+					  	}
+						else {
+							if(nume1 == "") {
+							  	for(var i = 0; i < nrCaini; i++) {
+							  		nume = xmlDoc.getElementsByTagName("nume")[i].childNodes[0].nodeValue;
+							  		sex = xmlDoc.getElementsByTagName("sex")[i].childNodes[0].nodeValue;
+							  		varstaX = parseInt(xmlDoc.getElementsByTagName("varsta")[i].childNodes[0].nodeValue, 10);
+						  			if((varstaX > condValoare) && (sex == femX)) {
+						  				text = text + nume + "<br>";
+						  			}
+							  	}
+							  	if(text != "") {
+									document.getElementById("mainB").innerHTML = text;
+								}
+							}
+						}
+					  	
+				    }
+				};
+				xhttp.open("GET", "hotelCaini.xml", true);
+				xhttp.send();
+	        }
+
+	        function medicamente(val1) {
+	        	// Selecting the input element and get its value 
+	            var nume1 = document.getElementById(val1).value;
+
+	         	var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+				    if (this.readyState == 4 && this.status == 200) {
+				        var parser, xmlDoc;
+				        var rel = "";
+				        var sanatos = "";
+				        var vitamine = "";
+				        var stare = "";
+				        var bolnav = "";
+				        var antibiotice = "";
+				        var text = "";
+
+					  	parser = new DOMParser();
+					  	xmlDoc = parser.parseFromString(this.responseText,"text/xml");
+
+					  	rel = xmlDoc.getElementsByTagName("rel")[21].childNodes[0].nodeValue;
+					  	sanatos = xmlDoc.getElementsByTagName("valoare")[0].childNodes[0].nodeValue;
+					  	bolnav = xmlDoc.getElementsByTagName("valoare")[2].childNodes[0].nodeValue;
+					  	vitamine = xmlDoc.getElementsByTagName("valoare")[1].childNodes[0].nodeValue;
+					  	antibiotice = xmlDoc.getElementsByTagName("valoare")[3].childNodes[0].nodeValue;
+
+					  	if(nume1 != "") {
+					  		for(var i = 0; i < nrCaini; i++) {
+						  		nume = xmlDoc.getElementsByTagName("nume")[i].childNodes[0].nodeValue;
+						  		if(nume == nume1) {
+						  			stare = xmlDoc.getElementsByTagName(rel)[i].childNodes[0].nodeValue;
+						  		}
+						  	}
+					  		if(stare == sanatos)
+					  			document.getElementById("mainB").innerHTML = vitamine;
+					  		else {
+					  			if(stare == bolnav)
+					  			document.getElementById("mainB").innerHTML = antibiotice;
+					  		}
+					  	}
+						else {
+							if(nume1 == "") {
+							  	for(var i = 0; i < nrCaini; i++) {
+							  		nume = xmlDoc.getElementsByTagName("nume")[i].childNodes[0].nodeValue;
+							  		stare = xmlDoc.getElementsByTagName(rel)[i].childNodes[0].nodeValue;
+						  			if(stare == sanatos) {
+						  				text = text + nume + "  -  " + vitamine + "<br>";
+						  			}
+						  			else {
+						  				if(stare == bolnav)
+						  					text = text + nume + "  -  " + antibiotice + "<br>";
+						  			}
+							  	}
+							  	if(text != "") {
+									document.getElementById("mainB").innerHTML = text;
+								}
+							}
+						}
+					  	
+				    }
+				};
+				xhttp.open("GET", "hotelCaini.xml", true);
+				xhttp.send();
+	        }
+
+	        function sedereLunga(val1) {
+	        	// Selecting the input element and get its value 
+	            var nume1 = document.getElementById(val1).value;
+
+	         	var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+				    if (this.readyState == 4 && this.status == 200) {
+				        var parser, xmlDoc;
+					  	var rel = "";
+					  	var op1 = "";
+					  	var op2 = "";
+					  	var condValoare1;
+					  	var condValoare2;
+					  	var text = "";
+					  	var durata;
+
+					  	parser = new DOMParser();
+					  	xmlDoc = parser.parseFromString(this.responseText,"text/xml");
+
+					  	
+						rel = xmlDoc.getElementsByTagName("rel")[25].childNodes[0].nodeValue;
+						op1 = xmlDoc.getElementsByTagName("valoare")[4].childNodes[0].nodeValue;
+						op2 = xmlDoc.getElementsByTagName("valoare")[5].childNodes[0].nodeValue;
+						condValoare1 = parseInt(xmlDoc.getElementsByTagName("cond_val")[4].childNodes[0].nodeValue, 10);
+						condValoare2 = parseInt(xmlDoc.getElementsByTagName("cond_val")[5].childNodes[0].nodeValue, 10);
+
+					  	if(nume1 != "") {
+					  		for(var i = 0; i < nrCaini; i++) {
+						  		nume = xmlDoc.getElementsByTagName("nume")[i].childNodes[0].nodeValue;
+						  		if(nume == nume1) {
+						  			durata = parseInt(xmlDoc.getElementsByTagName(rel)[i].childNodes[0].nodeValue, 10);
+						  		}
+						  	}
+					  		if((durata != condValoare1) && (durata > condValoare2))
+					  			document.getElementById("mainB").innerHTML = "yes";
+					  		else {
+					  			document.getElementById("mainB").innerHTML = "no";
+					  		}
+					  	}
+						else {
+							if(nume1 == "") {
+							  	for(var i = 0; i < nrCaini; i++) {
+							  		nume = xmlDoc.getElementsByTagName("nume")[i].childNodes[0].nodeValue;
+							  		durata = parseInt(xmlDoc.getElementsByTagName(rel)[i].childNodes[0].nodeValue, 10);
+						  			if((durata != condValoare1) && (durata > condValoare2)) {
+						  				text = text + nume + "  -  " + durata + " zile" + "<br>";
+						  			}
+							  	}
+							  	if(text != "") {
+									document.getElementById("mainB").innerHTML = text;
+								}
+							}
+						}
+					  	
+				    }
+				};
+				xhttp.open("GET", "hotelCaini.xml", true);
+				xhttp.send();
+	        }
+
+	        function extraVip(val1) {
+	        	// Selecting the input element and get its value 
+	            var nume1 = document.getElementById(val1).value;
+
+	         	var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+				    if (this.readyState == 4 && this.status == 200) {
+				        var parser, xmlDoc;
+					  	var rel1 = "";
+					  	var rel2 = "";
+					  	var rel3 = "";
+					  	var rel4 = "";
+					  	var op = "";
+					  	var condValoare;
+					  	var val1 = "";
+					  	var val2 = "";
+					  	var val3 = "";
+					  	var text = "";
+					  	var durata;
+					  	var plimbare = "";
+					  	var transport = "";
+					  	var dresaj = "";
+
+					  	parser = new DOMParser();
+					  	xmlDoc = parser.parseFromString(this.responseText,"text/xml");
+
+					  	
+						rel1 = xmlDoc.getElementsByTagName("rel")[28].childNodes[0].nodeValue;
+						rel2 = xmlDoc.getElementsByTagName("rel")[29].childNodes[0].nodeValue;
+						rel3 = xmlDoc.getElementsByTagName("rel")[30].childNodes[0].nodeValue;
+						rel4 = xmlDoc.getElementsByTagName("rel")[31].childNodes[0].nodeValue;
+						op = xmlDoc.getElementsByTagName("valoare")[6].childNodes[0].nodeValue;
+						condValoare = parseInt(xmlDoc.getElementsByTagName("cond_val")[6].childNodes[0].nodeValue, 10);
+						val1 = xmlDoc.getElementsByTagName("valoare")[7].childNodes[0].nodeValue;
+						val2 = xmlDoc.getElementsByTagName("valoare")[8].childNodes[0].nodeValue;
+						val3 = xmlDoc.getElementsByTagName("valoare")[9].childNodes[0].nodeValue;
+
+					  	if(nume1 != "") {
+					  		for(var i = 0; i < nrCaini; i++) {
+						  		nume = xmlDoc.getElementsByTagName("nume")[i].childNodes[0].nodeValue;
+						  		if(nume == nume1) {
+						  			durata = parseInt(xmlDoc.getElementsByTagName(rel1)[i].childNodes[0].nodeValue, 10);
+						  			plimbare = xmlDoc.getElementsByTagName(rel2)[i].childNodes[0].nodeValue;
+						  			transport = xmlDoc.getElementsByTagName(rel3)[i].childNodes[0].nodeValue;
+						  			dresaj = xmlDoc.getElementsByTagName(rel4)[i].childNodes[0].nodeValue;
+						  		}
+						  	}
+					  		if((durata > condValoare) && (plimbare == val1) && (transport == val2) && (dresaj == val3))
+					  			document.getElementById("mainB").innerHTML = "yes";
+					  		else {
+					  			document.getElementById("mainB").innerHTML = "no";
+					  		}
+					  	}
+						else {
+							if(nume1 == "") {
+							  	for(var i = 0; i < nrCaini; i++) {
+							  		nume = xmlDoc.getElementsByTagName("nume")[i].childNodes[0].nodeValue;
+							  		durata = parseInt(xmlDoc.getElementsByTagName(rel1)[i].childNodes[0].nodeValue, 10);
+						  			plimbare = xmlDoc.getElementsByTagName(rel2)[i].childNodes[0].nodeValue;
+						  			transport = xmlDoc.getElementsByTagName(rel3)[i].childNodes[0].nodeValue;
+						  			dresaj = xmlDoc.getElementsByTagName(rel4)[i].childNodes[0].nodeValue;
+						  			if((durata > condValoare) && (plimbare == val1) && (transport == val2) && (dresaj == val3)) {
+						  				text = text + nume + "<br>";
+						  			}
+							  	}
+							  	if(text != "") {
+									document.getElementById("mainB").innerHTML = text;
+								}
+							}
+						}
+					  	
+				    }
+				};
+				xhttp.open("GET", "hotelCaini.xml", true);
+				xhttp.send();
+	        }
+		</script>
+	</body>
+</html>

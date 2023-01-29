@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- tema 2 -->
+<hotel_caini>
+	<fapte>
+		<caine>
+			<nume>aldo</nume>
+			<sex>masculin</sex>
+			<talie>talieMica</talie>
+			<comportament>energic</comportament>
+			<stapan>bianca</stapan>
+			<cusca>1</cusca>
+			<varsta>1</varsta>
+			<stare_sanatate>sanatos</stare_sanatate>
+			<pachet>vip</pachet>
+			<plimbare>da</plimbare>
+			<dresare>da</dresare>
+			<transport>da</transport>
+			<pachet_spalare>da</pachet_spalare>
+			<durata_cazare>10</durata_cazare>
+		</caine>
+		<caine>
+			<nume>bruno</nume>
+			<sex>masculin</sex>
+			<talie>talieMica</talie>
+			<comportament>linistit</comportament>
+			<stapan>maria</stapan>
+			<cusca>1</cusca>
+			<varsta>2</varsta>
+			<stare_sanatate>bolnav</stare_sanatate>
+			<pachet>standard</pachet>
+			<plimbare>da</plimbare>
+			<dresare>nu</dresare>
+			<transport>nu</transport>
+			<pachet_spalare>da</pachet_spalare>
+			<durata_cazare>3</durata_cazare>
+		</caine>
+		<caine>
+			<nume>cosmo</nume>
+			<sex>masculin</sex>
+			<talie>talieMica</talie>
+			<comportament>linistit</comportament>
+			<stapan>alexandra</stapan>
+			<cusca>1</cusca>
+			<varsta>5</varsta>
+			<stare_sanatate>bolnav</stare_sanatate>
+			<pachet>standard</pachet>
+			<plimbare>da</plimbare>
+			<dresare>da</dresare>
+			<transport>nu</transport>
+			<pachet_spalare>da</pachet_spalare>
+			<durata_cazare>15</durata_cazare>
+		</caine>
+		<caine>
+			<nume>falco</nume>
+			<sex>masculin</sex>
+			<talie>talieMare</talie>
+			<comportament>energic</comportament>
+			<stapan>steluta</stapan>
+			<cusca>2</cusca>
+			<varsta>7</varsta>
+			<stare_sanatate>sanatos</stare_sanatate>
+			<pachet>vip</pachet>
+			<plimbare>da</plimbare>
+			<dresare>da</dresare>
+			<transport>da</transport>
+			<pachet_spalare>da</pachet_spalare>
+			<durata_cazare>20</durata_cazare>
+		</caine>
+		<caine>
+			<nume>goofy</nume>
+			<sex>masculin</sex>
+			<talie>talieMare</talie>
+			<comportament>energic</comportament>
+			<stapan>steluta</stapan>
+			<cusca>2</cusca>
+			<varsta>1</varsta>
+			<stare_sanatate>sanatos</stare_sanatate>
+			<pachet>standard</pachet>
+			<plimbare>nu</plimbare>
+			<dresare>nu</dresare>
+			<transport>da</transport>
+			<pachet_spalare>nu</pachet_spalare>
+			<durata_cazare>1</durata_cazare>
+		</caine>
+		<caine>
+			<nume>haiduc</nume>
+			<sex>masculin</sex>
+			<talie>talieMare</talie>
+			<comportament>linistit</comportament>
+			<stapan>maria</stapan>
+			<cusca>2</cusca>
+			<varsta>10</varsta>
+			<stare_sanatate>sanatos</stare_sanatate>
+			<pachet>vip</pachet>
+			<plimbare>da</plimbare>
+			<dresare>da</dresare>
+			<transport>da</transport>
+			<pachet_spalare>da</pachet_spalare>
+			<durata_cazare>12</durata_cazare>
+		</caine>
+		<caine>
+			<nume>bella</nume>
+			<sex>feminin</sex>
+			<talie>talieMica</talie>
+			<comportament>linistit</comportament>
+			<stapan>ion</stapan>
+			<cusca>3</cusca>
+			<varsta>12</varsta>
+			<stare_sanatate>bolnav</stare_sanatate>
+			<pachet>standard</pachet>
+			<plimbare>da</plimbare>
+			<dresare>nu</dresare>
+			<transport>nu</transport>
+			<pachet_spalare>nu</pachet_spalare>
+			<durata_cazare>5</durata_cazare>
+		</caine>
+		<caine>
+			<nume>ela</nume>
+			<sex>feminin</sex>
+			<talie>talieMare</talie>
+			<comportament>linistit</comportament>
+			<stapan>sorin</stapan>
+			<cusca>3</cusca>
+			<varsta>2</varsta>
+			<stare_sanatate>sanatos</stare_sanatate>
+			<pachet>standard</pachet>
+			<plimbare>nu</plimbare>
+			<dresare>da</dresare>
+			<transport>nu</transport>
+			<pachet_spalare>da</pachet_spalare>
+			<durata_cazare>13</durata_cazare>
+		</caine>
+		<caine>
+			<nume>helga</nume>
+			<sex>feminin</sex>
+			<talie>talieMare</talie>
+			<comportament>linistit</comportament>
+			<stapan>violeta</stapan>
+			<cusca>3</cusca>
+			<varsta>8</varsta>
+			<stare_sanatate>sanatos</stare_sanatate>
+			<pachet>standard</pachet>
+			<plimbare>nu</plimbare>
+			<dresare>nu</dresare>
+			<transport>da</transport>
+			<pachet_spalare>nu</pachet_spalare>
+			<durata_cazare>4</durata_cazare>
+		</caine>
+		<caine>
+			<nume>lolly</nume>
+			<sex>feminin</sex>
+			<talie>talieMica</talie>
+			<comportament>energic</comportament>
+			<stapan>maria</stapan>
+			<cusca>4</cusca>
+			<varsta>11</varsta>
+			<stare_sanatate>sanatos</stare_sanatate>
+			<pachet>vip</pachet>
+			<plimbare>da</plimbare>
+			<dresare>da</dresare>
+			<transport>da</transport>
+			<pachet_spalare>da</pachet_spalare>
+			<durata_cazare>15</durata_cazare>
+		</caine>
+
+		<pret>
+			<standard>100</standard>
+			<vip>100</vip>
+			<plimbare>100</plimbare>
+			<dresaj>100</dresaj>
+			<transport>100</transport>
+			<spalat>100</spalat>
+		</pret>
+
+		<cusca1>
+			<nr_locuri>4</nr_locuri>
+		</cusca1>
+		<cusca2>
+			<nr_locuri>4</nr_locuri>
+		</cusca2>
+		<cusca3>
+			<nr_locuri>3</nr_locuri>
+		</cusca3>
+		<cusca4>
+			<nr_locuri>3</nr_locuri>
+		</cusca4>
+	</fapte>
+	<reguli>
+		<regula>
+			<if>
+				<operatie>diferit</operatie><!-- 0-->
+				<catel>X</catel><!--0 -->
+				<catel>Y</catel><!--1 -->
+			</if>
+			<then> 
+				<rel>diferit</rel><!-- 0-->
+				<catel>X</catel><!-- 2-->
+				<catel>Y</catel><!-- 3-->
+			</then>
+		</regula>
+
+		<regula>
+			<if>
+				<rel>masculin</rel><!-- 1-->
+				<catel>X</catel><!-- 4-->
+			</if>
+			<and>
+				<rel>masculin</rel><!--2 -->
+				<catel>Y</catel><!-- 5-->
+				<operator_logic>and</operator_logic> <!-- 0 -->
+			</and>
+			<or>
+				<rel>feminin</rel><!-- 3-->
+				<catel>X</catel><!-- 6-->
+				<operator_logic>or</operator_logic> <!-- 1 -->
+			</or>
+			<or>
+				<rel>feminin</rel><!-- 4-->
+				<catel>Y</catel><!-- 7-->
+				<operator_logic>or</operator_logic> <!-- 2 -->
+			</or>
+			<and> 
+				<rel>diferit</rel><!--5 -->
+				<catel>X</catel><!--8 -->
+				<catel>Y</catel><!-- 9-->
+				<operator_logic>and</operator_logic> <!-- 3 -->
+			</and>
+			<and> 
+				<rel>cusca</rel><!-- 6-->
+				<catel>X</catel><!-- 10-->
+				<catel>Z</catel><!-- 11-->
+				<operator_logic>and</operator_logic> <!-- 4 -->
+			</and>
+			<and> 
+				<rel>cusca</rel><!--7 -->
+				<catel>Y</catel><!--12 -->
+				<catel>Z</catel><!-- 13-->
+				<operator_logic>and</operator_logic> <!-- 5 -->
+			</and>
+			<then>
+				<rel>stau_in_aceeasi_cusca</rel><!-- 8-->
+				<catel>X</catel><!-- 14-->
+				<catel>Y</catel> <!-- 15-->
+			</then>
+		</regula>
+		
+		<regula>
+			<if>
+				<rel>varsta</rel><!--9 -->
+				<catel>X</catel><!--16 -->
+				<cond>&lt;=</cond><!--0 -->
+				<cond_val>3</cond_val><!-- 0-->
+			</if>
+			<and>
+				<rel>masculin</rel><!-- 10-->
+				<catel>X</catel><!-- 17-->
+			</and>
+			<then>
+				<rel>pui_sex_masculin</rel><!--11 -->
+				<catel>X</catel><!-- 18-->
+			</then>
+		</regula>
+		
+		<regula>
+			<if>
+				<rel>varsta</rel><!-- 12-->
+				<catel>X</catel><!-- 19-->
+				<cond>&lt;=</cond><!-- 1-->
+				<cond_val>3</cond_val><!-- 1-->
+			</if>
+			<and>
+				<rel>feminin</rel><!--13 -->
+				<catel>X</catel><!-- 20-->
+			</and>
+			<then>
+				<rel>pui_sex_feminin</rel><!-- 14-->
+				<catel>X</catel><!--21 -->
+			</then>
+		</regula>
+		
+		<regula>
+			<if>
+				<rel>varsta</rel><!--15 -->
+				<catel>X</catel><!-- 22-->
+				<cond>&gt;</cond><!-- 2-->
+				<cond_val>3</cond_val><!-- 2-->
+			</if>
+			<and>
+				<rel>masculin</rel><!-- 16-->
+				<catel>X</catel><!-- 23-->
+			</and>
+			<then>
+				<rel>adult_sex_masculin</rel><!--17 -->
+				<catel>X</catel><!--24 -->
+			</then>
+		</regula>
+
+		<regula>
+			<if1>
+				<rel>varsta</rel><!--18 -->
+				<catel>X</catel><!-- 25-->
+				<cond>&gt;</cond><!--3 -->
+				<cond_val>3</cond_val><!-- 3-->
+			</if1>
+			<and>
+				<rel>feminin</rel><!--19 -->
+				<catel>X</catel><!-- 26-->
+			</and>
+			<then>
+				<rel>adult_sex_feminin</rel><!--20 -->
+				<catel>X</catel><!-- 27-->
+			</then>
+		</regula>
+
+		<regula>
+			<if>
+				<rel>stare_sanatate</rel><!-- 21-->
+				<catel>X</catel><!-- 28-->
+				<valoare>sanatos</valoare><!--0 -->
+			</if>
+			<then>
+				<rel>medicamente</rel><!--22 -->
+				<valoare>vitamine</valoare><!-- 1-->
+			</then>
+		</regula>
+
+		<regula>
+			<if>
+				<rel>stare_sanatate</rel><!-- 23-->
+				<catel>X</catel><!-- 29-->
+				<valoare>bolnav</valoare><!-- 2-->
+			</if>
+			<then>
+				<rel>medicamente</rel><!-- 24-->
+				<valoare>antibiotice</valoare><!--3 -->
+			</then>
+		</regula>
+		
+		<regula>
+			<if>
+				<rel>durata_cazare</rel><!--25 -->
+				<catel>X</catel><!-- 30-->
+				<valoare>!=</valoare><!-- 4-->
+				<cond_val>0</cond_val><!-- 4-->
+			</if>
+			<and>
+				<rel>durata_cazare</rel><!-- 26-->
+				<catel>X</catel><!-- 31-->
+				<valoare>&gt;=</valoare><!--5 -->
+				<cond_val>10</cond_val><!-- 4-->
+			</and>
+			<then>
+				<rel>sedere_lunga</rel><!-- 27-->
+				<catel>X</catel><!--32 -->
+			</then>
+		</regula>
+		<!---->
+		<regula>
+			<if>
+				<rel>durata_cazare</rel><!--28 -->
+				<valoare>&gt;</valoare><!-- 6-->
+				<cond_val>10</cond_val><!-- 6-->
+			</if>
+			<and>
+				<rel>plimbare</rel><!-- 29-->
+				<valoare>da</valoare><!-- 7-->
+				<catel>X</catel><!-- 33-->
+			</and>
+			<and>
+				<rel>dresare</rel><!-- 30-->
+				<valoare>da</valoare><!--8 -->
+				<catel>X</catel><!--34 -->
+			</and>
+			<and>
+				<rel>transport</rel><!-- 31-->
+				<valoare>da</valoare><!-- 9-->
+				<catel>X</catel><!-- 35-->
+			</and>
+			<then>
+				<rel>pachetExtraVip</rel><!-- 32-->
+				<catel>X</catel><!-- 36-->
+			</then>
+		</regula>
+	</reguli>
+</hotel_caini>
